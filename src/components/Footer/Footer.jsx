@@ -38,10 +38,18 @@ const Footer = () => {
       <StackColumn>
         <FooterTitle text={"address"} />
         <FooterLink
+          text={
+            <span>
+              <strong>Regd. Office-</strong> 2nd Floor House No.54 gali Number
+              7, Harit Vihar, 110084
+            </span>
+          }
+        />
+        <FooterLink
           text={"B-73/73, 2nd Flr., Rohit House, Vishwakarma Colony"}
         />
         <FooterLink text={"+918700810423"} />
-        <FooterLink text={"kesarsingh@gmail.com"} />
+        <FooterLink text={"kesar1965thakur@gmail.com"} />
       </StackColumn>
 
       <StackColumn>

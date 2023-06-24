@@ -5,7 +5,7 @@ import Title from "./Title";
 import imgDetail from "../assets/ocean.jpg";
 import door from "../assets/door.jpg";
 import imgDetail2 from "../assets/custom.jpg";
-
+import { useMediaQuery } from "@mui/material";
 const GetStarted = () => {
   const CustomGridItem = styled(Grid)({
     display: "flex",
@@ -40,21 +40,32 @@ const GetStarted = () => {
             }}
           >
             <Title text={"OCEAN FREIGHT"} textAlign={"start"} />
-            <CustomTypography>
-              At our company, we offer top-notch ocean freight shipping services
-              that cater to various needs. Our services include both Full
-              Container Load (FCL) and Less than Container Load (LCL) options,
-              ensuring flexibility for our clients. Additionally, we specialize
-              in handling Oversized & Project Cargo, Breakbulk shipments, as
-              well as Dangerous Goods. We also provide services such as Buyer's
-              Consolidation, Transport Insurance, and more. Our comprehensive
-              ocean freight shipping services cover the entire process of
-              transporting goods by sea. By understanding our clients'
-              requirements, we strive to find the optimal balance between time
-              and cost. With our expertise and a wide range of shipping options,
-              we ensure that our clients receive the best solutions for their
-              specific Ocean Freight shipping needs.
-            </CustomTypography>
+            {useMediaQuery("(max-width:600px)") ? (
+              <CustomTypography>
+                At our company, we offer top-notch ocean freight shipping
+                services that cater to various needs. Our services include both
+                Full Container Load (FCL) and Less than Container Load (LCL)
+                options, ensuring flexibility for our clients. Additionally, we
+                specialize in handling Oversized & Project Cargo, Breakbulk
+                shipments, as well as Dangerous Goods.
+              </CustomTypography>
+            ) : (
+              <CustomTypography>
+                At our company, we offer top-notch ocean freight shipping
+                services that cater to various needs. Our services include both
+                Full Container Load (FCL) and Less than Container Load (LCL)
+                options, ensuring flexibility for our clients. Additionally, we
+                specialize in handling Oversized & Project Cargo, Breakbulk
+                shipments, as well as Dangerous Goods. We also provide services
+                such as Buyer's Consolidation, Transport Insurance, and more.
+                Our comprehensive ocean freight shipping services cover the
+                entire process of transporting goods by sea. By understanding
+                our clients' requirements, we strive to find the optimal balance
+                between time and cost. With our expertise and a wide range of
+                shipping options, we ensure that our clients receive the best
+                solutions for their specific Ocean Freight shipping needs.
+              </CustomTypography>
+            )}
           </Box>
         </CustomGridItem>
 
@@ -102,6 +113,7 @@ const GetStarted = () => {
             }}
           >
             <Title text={"Custom Clearence"} textAlign={"start"} />
+            {useMediaQuery("(max-width:600px)") ? (
             <CustomTypography>
               We offer a range of services related to export customs clearance
               and handling of goods.
@@ -116,7 +128,29 @@ const GetStarted = () => {
                 <li>
                   Customs clearance of the import cargo at the port of entry
                 </li>
-                <li>Reconciliation of contracts after completion of import</li>
+                <li>
+                  Port handling and arranging bonded warehouse
+                </li>
+                <li>
+                  Classification in customs for minimum duty and easy clearance
+                </li>
+              </ul>
+            </CustomTypography>
+            ) : (
+              <CustomTypography>
+              We offer a range of services related to export customs clearance
+              and handling of goods.
+              <br /> Our specific services include:
+              <ul>
+                <li>Documentation for custom clearance</li>
+                <li>Carting / Receiving Goods</li>
+                <li>Examination of Shipments</li>
+                <li>
+                  Registration of contracts with customs for project clearance
+                </li>
+                <li>
+                  Customs clearance of the import cargo at the port of entry
+                </li>
                 <li>
                   Port handling and arranging bonded warehouse as and when
                   required by the client
@@ -128,16 +162,9 @@ const GetStarted = () => {
                 <li>
                   Classification in customs for minimum duty and easy clearance
                 </li>
-                <li>
-                  Suggestion for effective packing for economic handling and
-                  safety
-                </li>
-                <li>
-                  Handling of stuffing & de-stuffing at Ports, ICD's and
-                  Customer’s warehouse
-                </li>
               </ul>
             </CustomTypography>
+            )}
           </Box>
         </CustomGridItem>
       </Grid>

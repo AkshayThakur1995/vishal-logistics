@@ -11,6 +11,7 @@ import {
   ListItemText,
 } from "@mui/material";
 // menu
+import logo from "../assets/logo.png";
 import DrawerItem from "./DrawerItem";
 // rotas
 import { Link } from "react-router-dom";
@@ -50,13 +51,24 @@ const Navbar = () => {
       component="nav"
       position="sticky"
       sx={{
-        backgroundColor: "rgba(0, 0, 0, 0.8)", // Set the desired background color with reduced opacity
+        backgroundColor: "rgba(0, 0,50, 0.8)", // Set the desired background color with reduced opacity
       }}
       elevation={0}
     >
       <StyledToolbar>
-        <Typography variant="h6" component="h2">
-          Vishal Logistics
+        <Typography
+          variant="h6"
+          component="h2"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div>Vishal Logistics</div>
+          <div>
+            <img src={logo} style={{ width: "100px" }} alt="site" />
+          </div>
         </Typography>
         <Box sx={{ display: { xs: "block", sm: "none" } }}>
           <DrawerItem />

@@ -42,7 +42,7 @@ const Details = () => {
         }}
       >
         <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-          Email: kesarsingh@gmail.com
+          Email: kesar1965thakur@gmail.com
         </Typography>
         <Typography variant="h5" sx={{ fontWeight: "bold" }}>
           Contact: +91 84700810423

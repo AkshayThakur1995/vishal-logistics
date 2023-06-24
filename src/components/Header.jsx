@@ -21,7 +21,7 @@ const Header = () => {
     backgroundImage: `url(${headerImg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundColor: "rgba(0, 0, 255, 0.5)",
+    // backgroundColor: "rgba(0, 0, 255, 0.5)",
     textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
     zIndex: 0,
 
@@ -32,7 +32,7 @@ const Header = () => {
       left: 0,
       width: "100%",
       height: "100%",
-      background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
+      background: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))",
       zIndex: -1,
       transform: "translateZ(-1px) scale(2)",
     },
@@ -78,6 +78,7 @@ const Header = () => {
             color: "#fff",
             display: "flex",
             jusifyContent: "center",
+
             fontSize: "7rem",
             "@media (max-width: 600px)": {
               fontSize: "4rem", // Font size for smaller screens (adjust as needed)
@@ -92,22 +93,24 @@ const Header = () => {
           component="p"
           sx={{
             py: 3,
+            px: 4,
+            borderRadius: "20px",
             lineHeight: 1.6,
             color: "#fff",
+            textAlign: "left",
             fontSize: "1.5rem",
+            backdropFilter: "blur(5px)", // Add the blur effect
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
             "@media (max-width: 600px)": {
-              fontSize: "1rem", // Font size for smaller screens (adjust as needed)
+              fontSize: "1.25rem", // Font size for smaller screens (adjust as needed)
             },
           }}
         >
-          We serve as a valuable expansion partner to our clients, offering
-          industry-leading shipping services and comprehensive domestic and
-          global logistics solutions. With a widespread network spanning across
-          the globe, our team of skilled international freight agents and
+          We offer industry-leading shipping services and comprehensive domestic
+          and global logistics solutions. With a widespread network spanning
+          across the globe, our team of skilled international freight agents and
           experienced freight forwarders guarantees operational excellence and
-          delivers the highest level of service quality. We have a strong
-          presence at major ports in India and around the world, enabling us to
-          efficiently handle shipments across various locations.
+          delivers the highest level of service quality.
         </Typography>
       </BoxText>
 
