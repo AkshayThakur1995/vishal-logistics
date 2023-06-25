@@ -42,14 +42,13 @@ const Content = () => {
           }}
           textAlign={"center"}
         >
-          Property facilities
+          Logictics Facilities
         </Typography>
 
         <Paragraph
           text={
-            " We have more 5000 reviews\
-                    and our customers trust on out quality\
-                    product and trust own our product."
+            " We Povide best services\
+              to our customers."
           }
           //   maxWidth={"75%"}
           mx={0}
