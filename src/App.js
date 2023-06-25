@@ -30,12 +30,15 @@ function App() {
     width: "50px",
     height: "50px",
   };
+  const countryCode = "+91"; // Replace with the desired country code
+  const phoneNumber = "8700810423"; // Replace with the phone number
 
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${countryCode}${phoneNumber}`;
   return (
     <>
       <BrowserRouter>
         <a
-          href="https://api.whatsapp.com/send?phone=8700810423"
+          href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           style={buttonStyle}
