@@ -46,7 +46,7 @@ const Footer = () => {
           }
         />
         <FooterLink
-          text={"B-73/73, 2nd Flr., Rohit House, Vishwakarma Colony"}
+          text={"B-73/73, 2nd Flr., Rohit House, Vishwakarma Colony, Mb Road New delhi-44"}
         />
         <FooterLink text={"+918700810423"} />
         <FooterLink text={"kesar1965thakur@gmail.com"} />

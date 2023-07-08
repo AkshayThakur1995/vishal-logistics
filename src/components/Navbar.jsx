@@ -51,7 +51,7 @@ const Navbar = () => {
       component="nav"
       position="sticky"
       sx={{
-        backgroundColor: "rgba(0, 0,50, 0.8)", // Set the desired background color with reduced opacity
+        backgroundColor: "rgba(255, 255,255, 0.8)", // Set the desired background color with reduced opacity
       }}
       elevation={0}
     >
@@ -65,10 +65,10 @@ const Navbar = () => {
             alignItems: "center",
           }}
         >
-          <div>Vishal Logistics</div>
           <div>
             <img src={logo} style={{ width: "100px" }} alt="site" />
           </div>
+          <div style={{ color: "#3E7CC2" }}>VISHAL LOGISTICS</div>
         </Typography>
         <Box sx={{ display: { xs: "block", sm: "none" } }}>
           <DrawerItem />
@@ -82,7 +82,9 @@ const Navbar = () => {
                   component={Link}
                   to={item.to}
                   sx={{
-                    color: "#fff",
+                    color: "#3E7CC2",
+                    fontWeight: "bold", // Set the font weight to bold
+                    fontSize: "1.2rem",
                     "&:hover": {
                       backgroundColor: "transparent",
                       color: "orange",
