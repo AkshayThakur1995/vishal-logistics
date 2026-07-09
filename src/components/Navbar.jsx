@@ -24,10 +24,20 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-surface/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
+      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-5 md:px-8">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo} alt="Vishal Logistics logo" className="h-11 w-auto" width={171} height={128} />
-          <span className="hidden text-sm font-semibold text-paper sm:block">Vishal Logistics</span>
+          <span className="grid h-11 w-[3.75rem] shrink-0 place-items-center overflow-hidden rounded-[50%] bg-white shadow-sm ring-1 ring-white/80 sm:h-12 sm:w-[4.25rem]">
+            <img
+              src={logo}
+              alt="Vishal Logistics logo"
+              className="h-full w-full object-cover"
+              width={171}
+              height={128}
+            />
+          </span>
+          <span className="text-sm font-semibold leading-tight text-paper sm:text-base">
+            Vishal Logistics
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
