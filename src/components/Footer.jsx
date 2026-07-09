@@ -1,10 +1,26 @@
 import { Link } from "react-router-dom";
-import { EMAIL, OFFICES, PHONE_DISPLAY, PHONE_TEL, SERVICES, WHATSAPP_URL } from "../site";
+import { Mail, MapPin, Phone } from "lucide-react";
+import {
+  EMAIL,
+  OFFICES,
+  PHONE_LANDLINE,
+  PHONE_LANDLINE_TEL,
+  PHONE_MOBILE,
+  PHONE_MOBILE_TEL,
+  SERVICES,
+} from "../site";
+
+const COMPANY_LINKS = [
+  { to: "/about-us", label: "About Us" },
+  { to: "/about", label: "Services" },
+  { to: "/contact", label: "Contact" },
+  { to: "/contact", label: "Get a Quote" },
+];
 
 export default function Footer() {
   return (
     <footer className="bg-ink text-paper">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-14 md:px-8 md:py-20 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-14 md:px-8 md:py-20 lg:grid-cols-[2fr_1fr_1fr_1.2fr]">
         <div>
           <p className="display text-2xl">Vishal Logistics</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-paper/70">
@@ -29,48 +45,48 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <div>
-          <p className="eyebrow mb-4 text-accent">Offices</p>
-          <ul className="space-y-5 text-sm">
-            {OFFICES.map((o) => (
-              <li key={o.label}>
-                <p className="eyebrow mb-1 text-[0.6rem] text-paper/50">{o.label}</p>
-                <address className="not-italic leading-relaxed text-paper/80">
-                  {o.lines.map((line) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
-                </address>
+        <nav aria-label="Company">
+          <p className="eyebrow mb-4 text-accent">Company</p>
+          <ul className="space-y-3 text-sm">
+            {COMPANY_LINKS.map((l) => (
+              <li key={l.label}>
+                <Link to={l.to} className="text-paper/80 transition-colors hover:text-accent">
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         <div>
           <p className="eyebrow mb-4 text-accent">Contact</p>
-          <ul className="space-y-3 text-sm">
-            <li>
-              <a href={PHONE_TEL} className="font-mono text-paper/80 transition-colors hover:text-accent">
-                {PHONE_DISPLAY}
-              </a>
+          <ul className="space-y-4 text-sm">
+            <li className="flex gap-3">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={1.5} aria-hidden="true" />
+              <address className="space-y-3 not-italic leading-relaxed text-paper/80">
+                {OFFICES.map((address) => (
+                  <p key={address}>{address}</p>
+                ))}
+              </address>
             </li>
-            <li>
+            <li className="flex gap-3">
+              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={1.5} aria-hidden="true" />
+              <div className="space-y-1">
+                <a href={PHONE_LANDLINE_TEL} className="block font-mono text-paper/80 transition-colors hover:text-accent">
+                  {PHONE_LANDLINE}
+                </a>
+                <a href={PHONE_MOBILE_TEL} className="block font-mono text-paper/80 transition-colors hover:text-accent">
+                  {PHONE_MOBILE}
+                </a>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={1.5} aria-hidden="true" />
               <a
                 href={`mailto:${EMAIL}`}
                 className="break-all text-paper/80 transition-colors hover:text-accent"
               >
                 {EMAIL}
-              </a>
-            </li>
-            <li>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-paper/80 transition-colors hover:text-accent"
-              >
-                Chat on WhatsApp
               </a>
             </li>
           </ul>

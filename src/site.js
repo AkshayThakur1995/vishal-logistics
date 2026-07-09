@@ -1,34 +1,61 @@
-import { Ship, Plane, Stamp, Truck } from "lucide-react";
+import { Globe, Plane, Ship, Stamp, TrainFront, Warehouse } from "lucide-react";
 
-export const PHONE_DISPLAY = "+91 87008 10423";
-export const PHONE_TEL = "tel:+918700810423";
-export const WHATSAPP_URL = "https://wa.me/918700810423";
-export const EMAIL = "kesar1965thakur@gmail.com";
+export const FOUNDING_YEAR = 1995;
+
+export const PHONE_LANDLINE = "+91 11 71859030";
+export const PHONE_LANDLINE_TEL = "tel:+911171859030";
+export const PHONE_MOBILE = "8700810423";
+export const PHONE_MOBILE_TEL = "tel:+918700810423";
+export const PHONE_DISPLAY = `${PHONE_LANDLINE} · ${PHONE_MOBILE}`;
+export const PHONE_TEL = PHONE_MOBILE_TEL;
+export const EMAIL = "info@vishallogistics.in";
 
 export const OFFICES = [
-  {
-    label: "Regd. Office",
-    lines: ["2nd Floor, House No. 54, Gali No. 7", "Harit Vihar, Delhi 110084"],
-  },
-  {
-    label: "Branch Office",
-    lines: ["B-73/73, 2nd Floor, Rohit House", "Vishwakarma Colony, MB Road, New Delhi 110044"],
-  },
+  "B 54, GALI NO. 7, HARIT VIHAR, NEW DELHI-110084,",
+  "FLAT NO. 205, B-72, ROHIT HOUSE, VISHAWAKARMA COLONEY, M.B. ROAD NEW DELHI-110044.",
+];
+
+export const STATS_HOME = [
+  { value: "100+", label: "Countries Served" },
+  { value: "250+", label: "Global Partners" },
+  { value: "10,000+", label: "Shipments" },
+  { value: "24/7", label: "Support" },
+];
+
+export const STATS_ABOUT = [
+  { value: "500+", label: "Global Destinations" },
+  { value: "10,000+", label: "Shipments Delivered" },
+  { value: "15+", label: "Years of Experience" },
+  { value: "200+", label: "Clients Served" },
+];
+
+export const HERO_STRIP = [
+  "Sea Freight",
+  "Air Freight",
+  "Land & Rail",
+  "Customs Clearance",
+  "Warehousing",
 ];
 
 export const SERVICES = [
   {
+    id: "freight",
+    icon: Globe,
+    title: "Freight Forwarding",
+    blurb:
+      "End-to-end coordination for import and export cargo — booking, documentation, and delivery managed as one shipment.",
+    tags: "IMPORT · EXPORT · MULTIMODAL",
+  },
+  {
     id: "ocean",
-    code: "SVC·01",
     icon: Ship,
-    title: "Ocean Freight",
+    title: "Sea Freight",
     blurb:
       "FCL and LCL bookings on all major trade lanes, plus breakbulk, oversized project cargo, and dangerous goods.",
     tags: "FCL · LCL · BREAKBULK · DG",
   },
   {
     id: "air",
-    code: "SVC·02",
     icon: Plane,
     title: "Air Freight",
     blurb:
@@ -36,8 +63,15 @@ export const SERVICES = [
     tags: "EXPORT · IMPORT · TIME-CRITICAL",
   },
   {
+    id: "land",
+    icon: TrainFront,
+    title: "Land & Rail Transport",
+    blurb:
+      "Road and rail haulage across India with port-to-ICD connectivity and last-mile delivery to your consignee.",
+    tags: "ROAD · RAIL · PAN-INDIA",
+  },
+  {
     id: "customs",
-    code: "SVC·03",
     icon: Stamp,
     title: "Customs Clearance",
     blurb:
@@ -45,12 +79,66 @@ export const SERVICES = [
     tags: "PORT · AIRPORT · ICD",
   },
   {
-    id: "door",
-    code: "SVC·04",
-    icon: Truck,
-    title: "Door-to-Door",
+    id: "warehousing",
+    icon: Warehouse,
+    title: "Warehousing & Documentation",
     blurb:
-      "Port-to-door and door-to-door from shipper to consignee, for cargo of virtually any size or weight.",
-    tags: "ANY SIZE · PAN-INDIA",
+      "Bonded storage, cargo handling, and compliant documentation so your goods are ready to move when you are.",
+    tags: "BONDED · STORAGE · COMPLIANCE",
   },
+];
+
+export const VALUE_PROPS = [
+  {
+    num: "01",
+    title: "Single-Window Solution",
+    body: "One team handles booking, customs, and delivery — no hand-offs between agents.",
+  },
+  {
+    num: "02",
+    title: "Compliance-First Approach",
+    body: "Documentation and classification done right the first time to avoid delays and penalties.",
+  },
+  {
+    num: "03",
+    title: "Real-Time Visibility",
+    body: "Stay informed at every milestone from pickup through customs to final delivery.",
+  },
+  {
+    num: "04",
+    title: "E-Commerce Specialists",
+    body: "Tailored solutions for online sellers moving inventory across borders at speed.",
+  },
+];
+
+export const CORE_VALUES = [
+  {
+    num: "01",
+    title: "Reliability",
+    body: "We deliver on our commitments — on time, every time, with cargo handled with care.",
+  },
+  {
+    num: "02",
+    title: "Compliance",
+    body: "Every shipment meets regulatory standards across borders and jurisdictions.",
+  },
+  {
+    num: "03",
+    title: "Transparency",
+    body: "Clear pricing, honest timelines, and open communication at every stage.",
+  },
+  {
+    num: "04",
+    title: "Expertise",
+    body: "Decades of freight forwarding experience across ocean, air, land, and customs.",
+  },
+];
+
+export const STORY_SERVICES = [
+  "Freight Forwarding",
+  "Sea Freight",
+  "Air Freight",
+  "Land & Rail Transport",
+  "Customs Clearance",
+  "Warehousing & Documentation",
 ];

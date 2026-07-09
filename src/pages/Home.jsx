@@ -1,166 +1,135 @@
 import { Link } from "react-router-dom";
+import { ArrowRight, Phone } from "lucide-react";
 import { motion } from "motion/react";
-import { ArrowUpRight, Phone } from "lucide-react";
-import Ticker from "../components/Ticker.jsx";
 import Reveal from "../components/Reveal.jsx";
-import Corners from "../components/Corners.jsx";
-import { PHONE_DISPLAY, PHONE_TEL, SERVICES, WHATSAPP_URL, EMAIL } from "../site";
-import yard from "../assets/custom.jpg";
-
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-};
+import { HERO_IMAGE, SERVICE_IMAGES } from "../service-images.js";
+import {
+  HERO_STRIP,
+  PHONE_LANDLINE_TEL,
+  SERVICES,
+  STATS_HOME,
+  VALUE_PROPS,
+} from "../site";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
-
-const STEPS = [
-  {
-    title: "Enquiry & quote",
-    body: "Send your commodity, weight, and lane on WhatsApp or by phone. We come back with a rate and the routing that fits.",
-  },
-  {
-    title: "Docs & pickup",
-    body: "Invoice, packing list, and shipping documents prepared and verified. Cargo collected at your gate.",
-  },
-  {
-    title: "Customs clearance",
-    body: "Filing, examination, and classification for minimum duty at the port, airport, or inland container depot.",
-  },
-  {
-    title: "Transit & delivery",
-    body: "Sailed or flown on the booked lane, followed through to delivery at the consignee's door.",
-  },
-];
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-ink text-paper">
-        <img
-          src={yard}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/45" />
+      <section className="relative isolate min-h-[85vh] overflow-hidden">
+        <img src={HERO_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-surface/75" />
         <motion.div
-          variants={container}
           initial="hidden"
           animate="show"
-          className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 md:px-8 md:pb-24 md:pt-32"
+          transition={{ staggerChildren: 0.1 }}
+          className="relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-5 py-24 md:px-8"
         >
-          <motion.p variants={fadeUp} className="eyebrow text-accent">
-            Vishal Logistics · New Delhi&ensp;//&ensp;Ocean · Air · Customs · Door-to-Door
+          <motion.p variants={fadeUp} className="section-label">
+            Global · Reliable · Fast
           </motion.p>
           <motion.h1
             variants={fadeUp}
-            className="display mt-6 text-[clamp(2.75rem,9vw,6.75rem)]"
+            className="display mt-4 max-w-3xl text-4xl text-white md:text-6xl lg:text-7xl"
           >
-            Cleared.
-            <br />
-            Shipped.
-            <br />
-            <span className="text-accent">Delivered.</span>
+            Your Global Logistics Partner
           </motion.h1>
           <motion.p
             variants={fadeUp}
-            className="mt-7 max-w-xl text-base leading-relaxed text-paper/80 md:text-lg"
+            className="mt-6 max-w-xl text-base leading-relaxed text-paper/80 md:text-lg"
           >
-            We are a New Delhi freight forwarder moving ocean and air cargo of virtually any
-            size — with customs clearance and door-to-door delivery handled end to end, from
-            Indian ports and ICDs to anywhere in the world.
+            End-to-end freight forwarding from Delhi NCR to the world — ocean, air, customs
+            clearance, and door-to-door delivery handled by one team.
           </motion.p>
-          <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-[#ffc82e]"
-            >
-              Get a quote on WhatsApp
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </a>
-            <a
-              href={PHONE_TEL}
-              className="inline-flex items-center gap-2 border border-paper/40 px-6 py-3.5 text-sm font-semibold text-paper transition-colors hover:border-accent hover:text-accent"
-            >
-              <Phone className="h-4 w-4" aria-hidden="true" />
-              Call {PHONE_DISPLAY}
-            </a>
+          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
+            <Link to="/contact" className="btn-primary">
+              Get a Quote
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link to="/about" className="btn-outline">
+              View Services
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </motion.div>
-          <motion.p variants={fadeUp} className="eyebrow mt-10 text-paper/50">
-            FCL · LCL · Breakbulk · Project Cargo · Dangerous Goods
-          </motion.p>
         </motion.div>
-        <Ticker />
-      </section>
 
-      {/* Services manifest */}
-      <section className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
-        <Reveal>
-          <div className="flex items-center gap-3">
-            <span className="h-2 w-2 bg-accent" aria-hidden="true" />
-            <p className="eyebrow text-steel">Service manifest</p>
-          </div>
-          <h2 className="display mt-4 max-w-xl text-4xl md:text-5xl">What we move</h2>
-        </Reveal>
-
-        <Reveal delay={0.1} className="mt-10 md:mt-14">
-          <div className="grid gap-px border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
-            {SERVICES.map((s) => (
-              <article key={s.id} className="group relative bg-paper p-6 pb-7 transition-colors hover:bg-white">
-                <Corners />
-                <div className="flex items-start justify-between">
-                  <s.icon className="h-7 w-7 text-ink" strokeWidth={1.5} aria-hidden="true" />
-                  <span className="font-mono text-xs font-semibold tracking-[0.18em] text-steel/70">
-                    {s.code}
-                  </span>
-                </div>
-                <h3 className="display mt-6 text-xl">
-                  <Link to={`/about#${s.id}`} className="after:absolute after:inset-0">
-                    {s.title}
-                  </Link>
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-steel">{s.blurb}</p>
-                <p className="eyebrow mt-5 pr-8 text-[0.62rem] text-steel/70">{s.tags}</p>
-                <ArrowUpRight
-                  className="absolute bottom-5 right-5 h-4 w-4 text-steel/50 transition-colors group-hover:text-accent"
-                  aria-hidden="true"
-                />
-              </article>
+        <div className="relative border-t border-white/10 bg-surface/80 backdrop-blur">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-5 py-4 md:px-8">
+            {HERO_STRIP.map((item) => (
+              <span key={item} className="text-xs font-medium uppercase tracking-wider text-paper/70">
+                {item}
+              </span>
             ))}
           </div>
-          <p className="eyebrow mt-6 text-steel/80">
-            Also on manifest: Buyer's consolidation · Transport insurance · Bonded warehousing
-          </p>
-        </Reveal>
+        </div>
       </section>
 
-      {/* Process */}
-      <section className="bg-ink text-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
-          <Reveal>
-            <div className="flex items-center gap-3">
-              <span className="h-2 w-2 bg-accent" aria-hidden="true" />
-              <p className="eyebrow text-paper/60">How a shipment moves</p>
+      {/* Stats */}
+      <section className="border-b border-white/10 bg-surface-2">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-5 py-10 md:grid-cols-4 md:px-8">
+          {STATS_HOME.map((s) => (
+            <div key={s.label} className="text-center">
+              <p className="stat-value">{s.value}</p>
+              <p className="stat-label">{s.label}</p>
             </div>
-            <h2 className="display mt-4 max-w-2xl text-4xl md:text-5xl">
-              From enquiry to delivery
+          ))}
+        </div>
+      </section>
+
+      {/* Services grid */}
+      <section className="bg-surface py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <Reveal>
+            <p className="section-label">What We Do</p>
+            <h2 className="display mt-3 max-w-xl text-3xl text-white md:text-4xl">
+              End-to-End Logistics Services
             </h2>
           </Reveal>
-          <div className="mt-10 grid gap-10 sm:grid-cols-2 md:mt-14 lg:grid-cols-4">
-            {STEPS.map((step, i) => (
-              <Reveal key={step.title} delay={i * 0.08}>
-                <div className="border-t-2 border-paper/20 pt-5">
-                  <p className="font-mono text-sm font-semibold tracking-[0.18em] text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="display mt-4 text-lg">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-paper/70">{step.body}</p>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((s, i) => (
+              <Reveal key={s.id} delay={i * 0.05}>
+                <Link
+                  to={`/about#${s.id}`}
+                  className="group relative block aspect-[4/3] overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 hover:border-accent"
+                >
+                  <img
+                    src={SERVICE_IMAGES[s.id]}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="service-card-overlay absolute inset-0" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-5">
+                    <s.icon className="h-6 w-6 text-accent" strokeWidth={1.5} aria-hidden="true" />
+                    <h3 className="mt-3 text-lg font-semibold text-white">{s.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-paper/70">{s.blurb}</p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Value props */}
+      <section className="bg-surface-2 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <Reveal>
+            <h2 className="display max-w-2xl text-3xl text-white md:text-4xl">
+              Built for Global Trade. Trusted by E-Commerce.
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {VALUE_PROPS.map((v, i) => (
+              <Reveal key={v.num} delay={i * 0.08}>
+                <div className="rounded-lg border border-white/10 bg-surface/50 p-6 md:p-8">
+                  <span className="text-4xl font-bold text-accent/40">{v.num}</span>
+                  <h3 className="mt-3 text-lg font-semibold text-white">{v.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-steel">{v.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -169,40 +138,26 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
-        <Reveal>
-          <div className="flex items-center gap-3">
-            <span className="h-2 w-2 bg-accent" aria-hidden="true" />
-            <p className="eyebrow text-steel">Get a quote</p>
-          </div>
-          <h2 className="display mt-4 max-w-2xl text-4xl md:text-6xl">
-            Ready when your cargo is.
+      <section className="cta-glow bg-surface py-16 md:py-24">
+        <Reveal className="mx-auto max-w-3xl px-5 text-center md:px-8">
+          <p className="section-label">Get Started</p>
+          <h2 className="display mt-3 text-3xl text-white md:text-4xl">
+            Ready to Streamline Your Supply Chain?
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-steel">
-            Tell us what you're moving and where it's headed. We'll reply with a rate,
-            a routing, and what we need from you to get it gone.
+          <p className="mt-4 text-base leading-relaxed text-steel">
+            Tell us what you're moving and where it's headed. We'll reply with a tailored quote
+            and routing plan.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-[#ffc82e]"
-            >
-              Get a quote on WhatsApp
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </a>
-            <a
-              href={PHONE_TEL}
-              className="inline-flex items-center gap-2 border border-ink/30 px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper"
-            >
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Link to="/contact" className="btn-primary">
+              Get a Free Quote
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <a href={PHONE_LANDLINE_TEL} className="btn-outline">
               <Phone className="h-4 w-4" aria-hidden="true" />
-              Call {PHONE_DISPLAY}
+              Call Us Now
             </a>
           </div>
-          <p className="eyebrow mt-8 text-steel/80">
-            Or write to us — <a href={`mailto:${EMAIL}`} className="underline decoration-accent decoration-2 underline-offset-4 hover:text-ink">{EMAIL}</a>
-          </p>
         </Reveal>
       </section>
     </>

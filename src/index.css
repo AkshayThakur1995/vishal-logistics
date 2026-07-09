@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f4f5f2;
+  --color-paper: #f8fafc;
   --color-ink: #0c2530;
   --color-ink-2: #143442;
-  --color-steel: #51656e;
-  --color-accent: #f5b70a;
+  --color-steel: #94a3b8;
+  --color-accent: #f97316;
+  --color-surface: #0f172a;
+  --color-surface-2: #1e293b;
 
-  --font-display: "Archivo", system-ui, sans-serif;
-  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
@@ -17,12 +19,12 @@ html {
 }
 
 body {
-  @apply bg-paper font-sans text-ink antialiased;
+  @apply bg-surface font-sans text-paper antialiased;
 }
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: white;
 }
 
 :focus-visible {
@@ -30,18 +32,14 @@ body {
   outline-offset: 2px;
 }
 
-/* Container-broadside display type: Archivo stretched wide, heavy, all caps */
 .display {
   font-family: var(--font-display);
-  font-stretch: 125%;
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 0.95;
-  letter-spacing: -0.005em;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
-/* Manifest field label */
 .eyebrow {
   font-family: var(--font-mono);
   font-weight: 500;
@@ -50,29 +48,41 @@ body {
   text-transform: uppercase;
 }
 
-/* Port-code departures ticker */
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker 48s linear infinite;
+.section-label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
 }
 
-.ticker:hover .ticker-track {
-  animation-play-state: paused;
+.stat-value {
+  @apply text-3xl font-bold text-accent md:text-4xl;
 }
 
-@keyframes ticker {
-  to {
-    transform: translateX(-50%);
-  }
+.stat-label {
+  @apply mt-1 text-xs font-medium uppercase tracking-wider text-steel;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-500;
+}
+
+.btn-outline {
+  @apply inline-flex items-center gap-2 rounded-md border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10;
+}
+
+.service-card-overlay {
+  background: linear-gradient(to top, rgb(15 23 42 / 0.95) 0%, rgb(15 23 42 / 0.4) 55%, transparent 100%);
+}
+
+.cta-glow {
+  background: radial-gradient(ellipse at bottom, rgb(249 115 22 / 0.15) 0%, transparent 70%);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .ticker-track {
-    animation: none;
   }
 }
