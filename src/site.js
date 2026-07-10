@@ -8,10 +8,10 @@ export const PHONE_MOBILE = "8700810423";
 export const PHONE_MOBILE_TEL = "tel:+918700810423";
 export const PHONE_DISPLAY = `${PHONE_LANDLINE} · ${PHONE_MOBILE}`;
 export const PHONE_TEL = PHONE_MOBILE_TEL;
-export const EMAIL = "info@vishallogistics.in";
+export const EMAIL = "info@vishallogistics.com";
 
 export const OFFICES = [
-  "B 54, GALI NO. 7, HARIT VIHAR, NEW DELHI-110084,",
+  "B 54,C-Block GALI NO. 7, HARIT VIHAR, NEW DELHI-110084,",
   "FLAT NO. 205, B-72, ROHIT HOUSE, VISHAWAKARMA COLONEY, M.B. ROAD NEW DELHI-110044.",
 ];
 
