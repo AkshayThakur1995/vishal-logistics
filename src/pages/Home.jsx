@@ -21,15 +21,19 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate min-h-[85vh] overflow-hidden">
-        <img src={HERO_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-surface/75" />
+        <img
+          src={HERO_IMAGE}
+          alt=""
+          className="absolute inset-0 h-full w-full scale-105 object-cover brightness-110 contrast-105 saturate-125"
+        />
+        <div className="hero-overlay absolute inset-0" />
         <motion.div
           initial="hidden"
           animate="show"
           transition={{ staggerChildren: 0.1 }}
-          className="relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-5 py-24 md:px-8"
+          className="hero-copy relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-center px-5 py-24 md:px-8"
         >
-          <motion.p variants={fadeUp} className="section-label">
+          <motion.p variants={fadeUp} className="section-label drop-shadow-sm">
             Global · Reliable · Fast
           </motion.p>
           <motion.h1
@@ -40,7 +44,7 @@ export default function Home() {
           </motion.h1>
           <motion.p
             variants={fadeUp}
-            className="mt-6 max-w-xl text-base leading-relaxed text-paper/80 md:text-lg"
+            className="mt-6 max-w-xl text-base leading-relaxed text-white md:text-lg md:text-white/90"
           >
             End-to-end freight forwarding from Delhi NCR to the world — ocean, air, customs
             clearance, and door-to-door delivery handled by one team.
@@ -50,17 +54,17 @@ export default function Home() {
               Get a Quote
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <Link to="/about" className="btn-outline">
+            <Link to="/about" className="btn-outline bg-black/25 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none">
               View Services
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </motion.div>
         </motion.div>
 
-        <div className="relative border-t border-white/10 bg-surface/80 backdrop-blur">
+        <div className="relative border-t border-white/15 bg-surface/70 backdrop-blur-md md:bg-surface/40">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-5 py-4 md:px-8">
             {HERO_STRIP.map((item) => (
-              <span key={item} className="text-xs font-medium uppercase tracking-wider text-paper/70">
+              <span key={item} className="text-xs font-medium uppercase tracking-wider text-white">
                 {item}
               </span>
             ))}
@@ -126,8 +130,8 @@ export default function Home() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {VALUE_PROPS.map((v, i) => (
               <Reveal key={v.num} delay={i * 0.08}>
-                <div className="rounded-lg border border-white/10 bg-surface/50 p-6 md:p-8">
-                  <span className="text-4xl font-bold text-accent/40">{v.num}</span>
+                <div className="rounded-lg border border-white/15 bg-surface-2/80 p-6 md:p-8">
+                  <span className="text-4xl font-bold text-accent/50">{v.num}</span>
                   <h3 className="mt-3 text-lg font-semibold text-white">{v.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-steel">{v.body}</p>
                 </div>

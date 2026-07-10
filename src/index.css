@@ -2,12 +2,12 @@
 
 @theme {
   --color-paper: #f8fafc;
-  --color-ink: #0c2530;
-  --color-ink-2: #143442;
-  --color-steel: #94a3b8;
+  --color-ink: #152536;
+  --color-ink-2: #1c3348;
+  --color-steel: #b6c3d1;
   --color-accent: #f97316;
-  --color-surface: #0f172a;
-  --color-surface-2: #1e293b;
+  --color-surface: #1a2740;
+  --color-surface-2: #243552;
 
   --font-display: "Inter", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
@@ -70,15 +70,44 @@ body {
 }
 
 .btn-outline {
-  @apply inline-flex items-center gap-2 rounded-md border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10;
+  @apply inline-flex items-center gap-2 rounded-md border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10;
 }
 
 .service-card-overlay {
-  background: linear-gradient(to top, rgb(15 23 42 / 0.95) 0%, rgb(15 23 42 / 0.4) 55%, transparent 100%);
+  background: linear-gradient(to top, rgb(26 39 64 / 0.88) 0%, rgb(26 39 64 / 0.35) 55%, transparent 100%);
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgb(26 39 64 / 0.55) 0%,
+      rgb(26 39 64 / 0.72) 38%,
+      rgb(26 39 64 / 0.78) 68%,
+      rgb(26 39 64 / 0.7) 100%
+    );
+}
+
+@media (min-width: 768px) {
+  .hero-overlay {
+    background:
+      linear-gradient(
+        105deg,
+        rgb(26 39 64 / 0.68) 0%,
+        rgb(26 39 64 / 0.4) 42%,
+        rgb(26 39 64 / 0.16) 72%,
+        rgb(26 39 64 / 0.06) 100%
+      ),
+      linear-gradient(to top, rgb(26 39 64 / 0.5) 0%, transparent 38%);
+  }
+}
+
+.hero-copy {
+  text-shadow: 0 1px 2px rgb(15 23 42 / 0.55), 0 4px 18px rgb(15 23 42 / 0.45);
 }
 
 .cta-glow {
-  background: radial-gradient(ellipse at bottom, rgb(249 115 22 / 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at bottom, rgb(249 115 22 / 0.2) 0%, transparent 70%);
 }
 
 @media (prefers-reduced-motion: reduce) {

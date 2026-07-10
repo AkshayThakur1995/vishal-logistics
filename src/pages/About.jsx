@@ -13,14 +13,18 @@ export default function About() {
   return (
     <>
       <section className="relative isolate overflow-hidden py-20 md:py-28">
-        <img src={ABOUT_HERO_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-surface/80" />
+        <img
+          src={ABOUT_HERO_IMAGE}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover brightness-110 contrast-105 saturate-125"
+        />
+        <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto max-w-6xl px-5 md:px-8">
           <p className="section-label">About Us</p>
-          <h1 className="display mt-3 max-w-3xl text-3xl text-white md:text-5xl">
+          <h1 className="display mt-3 max-w-3xl text-3xl text-white drop-shadow-md md:text-5xl">
             Moving the World&apos;s Cargo Since {FOUNDING_YEAR}
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-paper/80">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/90">
             Vishal Logistics is a New Delhi-based freight forwarding company with decades of
             experience moving cargo across oceans, skies, and borders — with customs clearance
             and door-to-door delivery handled end to end.
@@ -83,8 +87,8 @@ export default function About() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {CORE_VALUES.map((v, i) => (
               <Reveal key={v.num} delay={i * 0.08}>
-                <div className="rounded-lg border border-white/10 bg-surface/50 p-6">
-                  <span className="text-3xl font-bold text-accent/40">{v.num}</span>
+                <div className="rounded-lg border border-white/15 bg-surface/60 p-6">
+                  <span className="text-3xl font-bold text-accent/50">{v.num}</span>
                   <h3 className="mt-2 text-lg font-semibold text-white">{v.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-steel">{v.body}</p>
                 </div>

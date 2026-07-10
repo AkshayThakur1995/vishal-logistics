@@ -65,7 +65,7 @@ export default function Contact() {
                 <a
                   key={c.label}
                   href={c.href}
-                  className="group rounded-lg border border-white/10 bg-surface-2 p-6 transition-colors hover:border-accent/50 md:p-8"
+                  className="group rounded-lg border border-white/15 bg-surface-2 p-6 transition-colors hover:border-accent/50 md:p-8"
                 >
                   <c.icon className="h-7 w-7 text-accent" strokeWidth={1.5} aria-hidden="true" />
                   <p className="eyebrow mt-6 text-steel">{c.label}</p>

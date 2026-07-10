@@ -19,7 +19,7 @@ const COMPANY_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-paper">
+    <footer className="bg-ink text-paper border-t border-white/10">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-14 md:px-8 md:py-20 lg:grid-cols-[2fr_1fr_1fr_1.2fr]">
         <div>
           <p className="display text-2xl">Vishal Logistics</p>
